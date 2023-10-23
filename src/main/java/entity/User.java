@@ -41,4 +41,15 @@ public class User {
     })
     private List<Role> roleList = new ArrayList<>();
 
+    @ManyToMany(mappedBy = "user")
+    private List<Point> pointList = new ArrayList<>();
+
+    @ManyToMany
+    @JoinTable(name = "user_favorite", schema = "travel-planner", joinColumns = {
+            @JoinColumn(name = "user_id", nullable = false)
+    }, inverseJoinColumns = {
+            @JoinColumn(name = "favorite_id", nullable = false)
+    })
+    private List<Favorite> favorites = new ArrayList<>();
+
 }

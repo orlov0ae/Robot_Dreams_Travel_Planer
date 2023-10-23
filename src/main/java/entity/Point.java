@@ -33,4 +33,7 @@ public class Point {
     })
     private List<User> userList = new ArrayList<>();
 
+    @ManyToMany
+    private List<Favorite> favorites = new ArrayList<>();
+
 }
