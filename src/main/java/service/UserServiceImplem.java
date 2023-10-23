@@ -41,7 +41,7 @@ public class UserServiceImplem implements UserService {
     @Transactional
     @Override
     public UserDTO updateUser(Long id, UserDTO userDTO) {
-        if (userRepository.existsById()) {
+        if (userRepository.existsById(id)) {
             User user = userMapper.toEntity(userDTO);
             user.setId(id);
             user = userRepository.save(user);
